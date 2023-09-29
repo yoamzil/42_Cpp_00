@@ -1,7 +1,7 @@
 CC = c++
 CFLAGS = -Wall -Werror -Wextra
-NAME = 
-SRCS = 
+NAME = test
+SRCS = test.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 %.o: %.cpp

@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/29 23:52:05 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/09/30 00:02:39 by yoamzil          ###   ########.fr       */
+/*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
+/*   Updated: 2023/09/30 00:25:11 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_H
-#define PHONEBOOK_CLASS_H
+#include <iostream>
 
-class   PhoneBook
+int main(void)
 {
-    public:
-        char    contacts[7];
-};
-
-#endif
+    std::cout << "Enter the command:";
+    
+    std::string command;
+    std::cin >> command;
+    
+    if (command == "ADD");
+    if (command == "SEARCH");
+    if (command == "EXIT");
+    return (0);   
+}
