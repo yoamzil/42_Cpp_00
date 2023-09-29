@@ -2,9 +2,9 @@ CC = c++
 CFLAGS = -Wall -Werror -Wextra
 NAME = megaphone
 SRCS = megaphone.cpp
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.cpp=.o)
 
-%.o: %.c
+%.o: %.cpp
 	$(CC) $(CFLAGS) -c $^
 
 all: $(NAME)

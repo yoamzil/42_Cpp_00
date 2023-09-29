@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.c                                        :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:37:20 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/09/29 18:40:42 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/09/29 18:55:11 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <iostream>
+using   namespace   std;
 
 void    letter_capitalize(char *str)
 {
@@ -34,7 +35,7 @@ void    starting_program(char *str)
     while (str[i])
     {
         if (str[i] != '"')
-            printf("%c", str[i]);
+            cout << str[i];
         i++;
     }
 }
@@ -50,14 +51,14 @@ int main(int ac, char **av)
         while (i <= ac -1)
         {
             if (!check)
-                printf(" ");
+                cout << " ";
             check = 0;
             starting_program(av[i]);
             i++;
         }
-        printf("\n");
+        cout << endl;
     }
     else
-        printf("* LOUD AND UNBEARABLE FEEDBACK NOISE *\n");
-    return (0);        
+        cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
+    return (0);     
 }
