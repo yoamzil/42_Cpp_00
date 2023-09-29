@@ -6,59 +6,48 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:37:20 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/09/29 18:55:11 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/09/29 19:26:19 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-using   namespace   std;
 
-void    letter_capitalize(char *str)
+void	StringCap(std::string str)
 {
-    int i;
-
-    i = 0;
-    while (str[i])
-    {
-        if (str[i] >= 'a' && str[i] <= 'z')
-            str[i] -= 32;
-        i++;
-    }
+	for (char c : str)
+	{
+		if (std::islower(c))
+			c = std::toupper(c);
+	}
 }
 
-void    starting_program(char *str)
+void	StartingProgram(std::string str)
 {
-    int i;
-
-    i = 0;
-    letter_capitalize(str);
-    while (str[i])
-    {
-        if (str[i] != '"')
-            cout << str[i];
-        i++;
-    }
+	StringCap(str);
+	for (char c : str)
+	{
+		if (c != '"')
+			std::cout << c;
+	}
 }
-int main(int ac, char **av)
-{
-    int i;
-    int check;
 
-    if (ac >= 2)
-    {
-        i = 1;
-        check = 1;
-        while (i <= ac -1)
-        {
-            if (!check)
-                cout << " ";
-            check = 0;
-            starting_program(av[i]);
-            i++;
-        }
-        cout << endl;
-    }
-    else
-        cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
-    return (0);     
+int	main(int ac, char **av)
+{
+	int i;
+
+	if (ac > 1)
+	{
+		i = 1;
+		while (i <= ac - 1)
+		{
+			if (i > 1)
+				std::cout << " ";
+			StartingProgram(av[i]);
+			i++;
+		}
+		std::cout << std::endl;
+	}
+	else
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+	return (0);
 }
