@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 23:51:57 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/09/30 12:57:23 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/09/30 22:18:56 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ class   Contact
         std::string nick_name;
         std::string phone_number;
         std::string darkest_secret;
+
+        Contact(void);
+        ~Contact(void);
 };
 
 #endif

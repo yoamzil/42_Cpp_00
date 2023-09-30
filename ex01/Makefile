@@ -1,7 +1,7 @@
 CC = c++
 CFLAGS = -Wall -Werror -Wextra
-NAME = test
-SRCS = test.cpp
+NAME = phonebook
+SRCS = main.cpp PhoneBook.class.cpp Contact.class.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 %.o: %.cpp
