@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/01 21:51:56 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/01 21:53:21 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int main(void)
         std::string phone;
         std::string secret;
     
-        // std::cin >> command;
         std::getline(std::cin, command);
 
         if (command.empty())
@@ -40,7 +39,6 @@ int main(void)
         }
         if (command == "ADD")
         {
-            // std::cout << "ADD command called" << std::endl;
             std::cout << "Enter first name: ";
             std::cin >> first;
             std::cout << "Enter last name: ";
@@ -65,8 +63,6 @@ int main(void)
             std::cout << "EXIT command called" << std::endl;
             exit (0);
         }
-
-            
         else
         {
             std::cout << "Wrong command... Try again!" << std::endl << "Enter the command: ";
