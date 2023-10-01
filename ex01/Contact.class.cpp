@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 20:13:46 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/01 09:54:50 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/01 16:57:27 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,11 @@ Contact::~Contact(void)
     return;
 }
 
-void    Contact::ContactFilling(std::string  first, std::string  last, std::string   nick, std::string   phone, std::string  secret) : first(first_name), last(last_name), nick(nick_name), phone(phone_number), secret(darkest_secret)
-{}
+void Contact::ContactFilling(std::string first, std::string last, std::string nick, std::string phone, std::string secret)
+{
+    first_name = first;
+    last_name = last;
+    nick_name = nick;
+    phone_number = phone;
+    darkest_secret = secret;
+}
