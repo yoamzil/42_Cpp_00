@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/01 09:47:06 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/01 17:46:50 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,29 @@ int main(void)
     while (1)
     {
         std::string command;
+        std::string first;
+        std::string last;
+        std::string nick;
+        std::string phone;
+        std::string secret;
+    
         std::cin >> command;
 
         if (command == "ADD")
         {
-            std::cout << "ADD command called" << std::endl;
+            // std::cout << "ADD command called" << std::endl;
+            std::cout << "Enter first name: ";
+            std::cin >> first;
+            std::cout << "Enter last name: ";
+            std::cin >> last;
+            std::cout << "Enter nickname: ";
+            std::cin >> nick;
+            std::cout << "Enter phone number: ";
+            std::cin >> phone;
+            std::cout << "Tell me your darkest secret... NOWWW!: ";
+            std::cin >> secret;
+            contact.ContactFilling(first, last, nick, phone, secret);
+            phonebook.AddToPhoneBook();
             return (0);
         }
         if (command == "SEARCH")
