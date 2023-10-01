@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 20:13:46 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/09/30 22:29:39 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/01 09:54:50 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,6 @@ Contact::~Contact(void)
     // std::cout << "Contact destructor called" << std::endl;
     return;
 }
+
+void    Contact::ContactFilling(std::string  first, std::string  last, std::string   nick, std::string   phone, std::string  secret) : first(first_name), last(last_name), nick(nick_name), phone(phone_number), secret(darkest_secret)
+{}

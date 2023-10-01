@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/01 09:42:36 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/01 09:47:06 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int main(void)
 {
     std::cout << "Enter the command: ";
 
-    PhoneBook phonebook;
-    Contact contact;
+    PhoneBook   phonebook;
+    Contact     contact;
 
     while (1)
     {
