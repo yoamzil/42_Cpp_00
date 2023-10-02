@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/02 11:59:11 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/02 14:13:44 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ void AddCommand(Contact contact)
     std::getline(std::cin, first);
     while (first.empty())
     {
-        std::cout << "No input detected." << std::endl
-                  << "Enter first name: ";
+        std::cout << "No input detected." << std::endl << "Enter first name: ";
         std::getline(std::cin, first);
     }
 
@@ -35,8 +34,7 @@ void AddCommand(Contact contact)
     std::getline(std::cin, last);
     while (last.empty())
     {
-        std::cout << "No input detected." << std::endl
-                  << "Enter last name: ";
+        std::cout << "No input detected." << std::endl << "Enter last name: ";
         std::getline(std::cin, last);
     }
 
@@ -44,8 +42,7 @@ void AddCommand(Contact contact)
     std::getline(std::cin, nick);
     while (nick.empty())
     {
-        std::cout << "No input detected." << std::endl
-                  << "Enter nickname: ";
+        std::cout << "No input detected." << std::endl << "Enter nickname: ";
         std::getline(std::cin, nick);
     }
 
@@ -53,8 +50,7 @@ void AddCommand(Contact contact)
     std::getline(std::cin, phone);
     while (phone.empty())
     {
-        std::cout << "No input detected." << std::endl
-                  << "Enter phone number: ";
+        std::cout << "No input detected." << std::endl << "Enter phone number: ";
         std::getline(std::cin, phone);
     }
 
@@ -62,8 +58,7 @@ void AddCommand(Contact contact)
     std::getline(std::cin, secret);
     while (secret.empty())
     {
-        std::cout << "No input detected." << std::endl
-                  << "Tell me your darkest secret... NOWWW!: ";
+        std::cout << "No input detected." << std::endl << "Tell me your darkest secret... NOWWW!: ";
         std::getline(std::cin, secret);
     }
     contact.ContactFilling(first, last, nick, phone, secret);
@@ -81,31 +76,22 @@ void ExitCommand()
 
 int main(void)
 {
-    std::cout << "Enter the command: ";
-
     PhoneBook phonebook;
     Contact contact;
 
     while (1)
     {
+        std::cout << "Enter the command: ";
+
         std::string command;
         std::getline(std::cin, command);
 
         if (command == "ADD")
-        {
             AddCommand(contact);
-            return (0);
-        }
         if (command == "SEARCH")
-        {
             SearchCommand();
-            return (0);
-        }
         if (command == "EXIT")
-        {
-            ExitCommand();
             exit(0);
-        }
         else
         {
             if (command.empty() || (command != "ADD" && command != "SEARCH" && command != "EXIT"))
