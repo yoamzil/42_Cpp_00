@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 23:51:57 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/01 09:49:52 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/02 08:34:00 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class   Contact
         Contact(void);
         ~Contact(void);
         void    ContactFilling(std::string  first, std::string  last, std::string   nick, std::string   phone, std::string  secret);
-
+        void    ContactDisplaying();
     private:
 
         std::string first_name;
