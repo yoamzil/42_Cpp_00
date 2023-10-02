@@ -6,12 +6,11 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 20:13:46 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/02 14:08:22 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/02 22:06:53 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.class.hpp"
-#include <iostream>
 
 Contact::Contact(void)
 {

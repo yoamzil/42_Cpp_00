@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/02 15:37:11 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/02 15:54:53 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	AddCommand(Contact contact)
 	}
 	contact.ContactFilling(first, last, nick, phone, secret);
 	contact.ContactDisplaying();
-	// phonebook.AddToPhoneBook();
 }
 
 void SearchCommand()
@@ -86,7 +85,10 @@ int main(void)
 		std::getline(std::cin, command);
 
 		if (command == "ADD")
+		{
 			AddCommand(contact);
+			phonebook.AddToPhoneBook(contact);
+		}
 		if (command == "SEARCH")
 			SearchCommand();
 		if (command == "EXIT")

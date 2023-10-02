@@ -6,21 +6,25 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 23:52:05 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/01 17:45:32 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/02 22:09:19 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	PHONEBOOK_CLASS_H
-#define	PHONEBOOK_CLASS_H
+#ifndef	PHONEBOOK_CLASS_HPP
+#define	PHONEBOOK_CLASS_HPP
+
+#include "Contact.class.hpp"
+#include <iostream>
 
 class	PhoneBook
 {
 	public:
-		char	contacts[7];
 
+		Contact	contacts[7];
 		PhoneBook(void);
 		~PhoneBook(void);
-		void    AddToPhoneBook(void);
+
+		void    AddToPhoneBook(Contact contact);
 };
 
 #endif
