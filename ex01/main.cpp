@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/03 21:21:31 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/03 22:45:55 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,11 @@ void AddCommand(Contact contact, PhoneBook *phonebook, int i)
 void SearchCommand(PhoneBook phonebook, Contact contact)
 {
 	(void)contact;
-	// int			i;
-	std::string	first;
-	std::string	last;
-	std::string	nick;
-
+	std::string	index;
+	int			index_casted;
+	std::string first;
+	std::string last;
+	std::string nick;
 
 	std::cout << " ___________________________________________" << std::endl;
 	std::cout << "|" << std::setw(10) << "INDEX"
@@ -120,6 +120,25 @@ void SearchCommand(PhoneBook phonebook, Contact contact)
 		std::cout << "|" << std::setw(10) << i + 1 << "|" << std::setw(10) << first << "|" << std::setw(10) << last << "|" << std::setw(10) << nick << "|" << std::endl;
 	}
 	std::cout << " ___________________________________________" << std::endl;
+
+
+	
+	std::cout << "Enter contact index: ";
+	std::getline(std::cin, index);
+	if (std::cin.eof())
+		exit(0);
+	while (index.empty())
+	{
+		std::cout << "No input detected." << std::endl
+				  << "Enter contact index: ";
+		std::getline(std::cin, index);
+		if (std::cin.eof())
+			exit(0);
+	}
+	index_casted = std::stoi(index);
+	std::cout << "l index howa ---->" << index_casted << std::endl;
+	phonebook.getContact(index_casted - 1).ContactDisplaying();
+
 }
 
 void ExitCommand()
