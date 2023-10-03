@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/03 15:56:59 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/03 21:21:31 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,15 +92,32 @@ void AddCommand(Contact contact, PhoneBook *phonebook, int i)
 
 void SearchCommand(PhoneBook phonebook, Contact contact)
 {
-	(void)phonebook;
 	(void)contact;
+	// int			i;
+	std::string	first;
+	std::string	last;
+	std::string	nick;
+
 
 	std::cout << " ___________________________________________" << std::endl;
-	std::cout << "|" << std::setw(10) << "INDEX" << "|" << std::setw(10) << "FIRST NAME" << "|" << std::setw(10) << "LAST NAME" << "|" << std::setw(10) << "NICKNAME" << "|" << std::endl;
+	std::cout << "|" << std::setw(10) << "INDEX"
+			  << "|" << std::setw(10) << "FIRST NAME"
+			  << "|" << std::setw(10) << "LAST NAME"
+			  << "|" << std::setw(10) << "NICKNAME"
+			  << "|" << std::endl;
 	std::cout << " ___________________________________________" << std::endl;
 	for (int i = 0; i <= 7; i++)
 	{
-		std::cout << "|" << std::setw(10) << i + 1 << "|" << std::setw(10) << phonebook.getContact(i).getFirstName() << "|" << std::setw(10) << phonebook.getContact(i).getLastName() << "|" << std::setw(10) << phonebook.getContact(i).getNickName() << "|" << std::endl;
+		first = phonebook.getContact(i).getFirstName();
+		last = phonebook.getContact(i).getLastName();
+		nick = phonebook.getContact(i).getNickName();
+		if (first.length() >= 9)
+			first = first.substr(0, 9) + ".";
+		if (last.length() >= 9)
+			last = last.substr(0, 9) + ".";
+		if (nick.length() >= 9)
+			nick = nick.substr(0, 9) + ".";
+		std::cout << "|" << std::setw(10) << i + 1 << "|" << std::setw(10) << first << "|" << std::setw(10) << last << "|" << std::setw(10) << nick << "|" << std::endl;
 	}
 	std::cout << " ___________________________________________" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 23:52:05 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/03 15:53:52 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/03 21:21:47 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "Contact.class.hpp"
 #include <iostream>
 #include <iomanip>
+#include <string>
 
 
 class	PhoneBook
@@ -29,8 +30,8 @@ class	PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 
-		void    AddToPhoneBook(Contact contact, int i);
-		Contact	getContact(int i);
+		void		AddToPhoneBook(Contact contact, int i);
+		Contact		getContact(int i);
 };
 
 #endif
