@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/03 22:45:55 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/03 22:47:41 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,8 @@ void AddCommand(Contact contact, PhoneBook *phonebook, int i)
 void SearchCommand(PhoneBook phonebook, Contact contact)
 {
 	(void)contact;
-	std::string	index;
-	int			index_casted;
+	std::string index;
+	int index_casted;
 	std::string first;
 	std::string last;
 	std::string nick;
@@ -121,8 +121,6 @@ void SearchCommand(PhoneBook phonebook, Contact contact)
 	}
 	std::cout << " ___________________________________________" << std::endl;
 
-
-	
 	std::cout << "Enter contact index: ";
 	std::getline(std::cin, index);
 	if (std::cin.eof())
@@ -138,7 +136,6 @@ void SearchCommand(PhoneBook phonebook, Contact contact)
 	index_casted = std::stoi(index);
 	std::cout << "l index howa ---->" << index_casted << std::endl;
 	phonebook.getContact(index_casted - 1).ContactDisplaying();
-
 }
 
 void ExitCommand()
