@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 23:52:05 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/03 11:49:44 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/03 13:52:00 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class	PhoneBook
 		~PhoneBook(void);
 
 		void    AddToPhoneBook(Contact contact, int i);
+		Contact	getContact(int i);
 };
 
 #endif
