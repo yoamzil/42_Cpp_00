@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 20:13:46 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/03 15:11:27 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/03 15:48:09 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,19 @@ void    Contact::ContactDisplaying()
     std::cout << "Nickname: " << nick_name << std::endl;
     std::cout << "Phone number: " << phone_number << std::endl;
     std::cout << "Darkest secret: " << darkest_secret << std::endl;
+}
+
+std::string Contact::getFirstName()
+{
+    return (first_name);
+}
+
+std::string Contact::getLastName()
+{
+    return (last_name);
+}
+
+std::string Contact::getNickName()
+{
+    return (nick_name);
 }

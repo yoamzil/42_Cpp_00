@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 23:51:57 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/03 15:11:33 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/03 15:53:55 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define CONTACT_CLASS_HPP
 
 #include <iostream>
+#include <iomanip>
+
 
 class   Contact
 {
@@ -24,6 +26,9 @@ class   Contact
     
         void    ContactFilling(std::string  first, std::string  last, std::string   nick, std::string   phone, std::string  secret);
         void    ContactDisplaying();
+        std::string getFirstName();
+        std::string getLastName();
+        std::string getNickName();
     
     private:
 

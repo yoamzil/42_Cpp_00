@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/03 15:11:03 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/03 15:56:59 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "PhoneBook.class.hpp"
 #include "Contact.class.hpp"
 
-void	AddCommand(Contact contact, PhoneBook phonebook, int i)
+void AddCommand(Contact contact, PhoneBook *phonebook, int i)
 {
 	std::string first;
 	std::string last;
@@ -25,64 +25,69 @@ void	AddCommand(Contact contact, PhoneBook phonebook, int i)
 	std::cout << "Enter first name: ";
 	std::getline(std::cin, first);
 	if (std::cin.eof())
-			exit (0);
+		exit(0);
 	while (first.empty())
 	{
-		std::cout << "No input detected." << std::endl << "Enter first name: ";
+		std::cout << "No input detected." << std::endl
+				  << "Enter first name: ";
 		std::getline(std::cin, first);
 		if (std::cin.eof())
-			exit (0);
+			exit(0);
 	}
 
 	std::cout << "Enter last name: ";
 	std::getline(std::cin, last);
 	if (std::cin.eof())
-			exit (0);
+		exit(0);
 	while (last.empty())
 	{
-		std::cout << "No input detected." << std::endl << "Enter last name: ";
+		std::cout << "No input detected." << std::endl
+				  << "Enter last name: ";
 		std::getline(std::cin, last);
 		if (std::cin.eof())
-			exit (0);
+			exit(0);
 	}
 
 	std::cout << "Enter nickname: ";
 	std::getline(std::cin, nick);
 	if (std::cin.eof())
-			exit (0);
+		exit(0);
 	while (nick.empty())
 	{
-		std::cout << "No input detected." << std::endl << "Enter nickname: ";
+		std::cout << "No input detected." << std::endl
+				  << "Enter nickname: ";
 		std::getline(std::cin, nick);
 		if (std::cin.eof())
-			exit (0);
+			exit(0);
 	}
 
 	std::cout << "Enter phone number: ";
 	std::getline(std::cin, phone);
 	if (std::cin.eof())
-			exit (0);
+		exit(0);
 	while (phone.empty())
 	{
-		std::cout << "No input detected." << std::endl << "Enter phone number: ";
+		std::cout << "No input detected." << std::endl
+				  << "Enter phone number: ";
 		std::getline(std::cin, phone);
 		if (std::cin.eof())
-			exit (0);
+			exit(0);
 	}
 
 	std::cout << "Tell me your darkest secret: ";
 	std::getline(std::cin, secret);
 	if (std::cin.eof())
-			exit (0);
+		exit(0);
 	while (secret.empty())
 	{
-		std::cout << "No input detected." << std::endl << "Tell me your darkest secret... NOWWW!: ";
+		std::cout << "No input detected." << std::endl
+				  << "Tell me your darkest secret... NOWWW!: ";
 		std::getline(std::cin, secret);
 		if (std::cin.eof())
-			exit (0);
+			exit(0);
 	}
 	contact.ContactFilling(first, last, nick, phone, secret);
-	phonebook.AddToPhoneBook(contact, i);
+	phonebook->AddToPhoneBook(contact, i);
 }
 
 void SearchCommand(PhoneBook phonebook, Contact contact)
@@ -90,14 +95,14 @@ void SearchCommand(PhoneBook phonebook, Contact contact)
 	(void)phonebook;
 	(void)contact;
 
-	std::cout << " ___________________________________________" <<std::endl;
-	std::cout << "|" << "INDEX     " << "|" << "FIRST NAME" << "|" << "LAST NAME " << "|" << "NICKNAME  " << "|" << std::endl;
-	std::cout << " ___________________________________________" <<std::endl;
-	for(int i = 0; i <= 7; i++)
+	std::cout << " ___________________________________________" << std::endl;
+	std::cout << "|" << std::setw(10) << "INDEX" << "|" << std::setw(10) << "FIRST NAME" << "|" << std::setw(10) << "LAST NAME" << "|" << std::setw(10) << "NICKNAME" << "|" << std::endl;
+	std::cout << " ___________________________________________" << std::endl;
+	for (int i = 0; i <= 7; i++)
 	{
-		std::cout << "|" << i + 1 << "         "  << "|" << "          " << "|" << "          " << "|" << "          " << "|" << std::endl;
+		std::cout << "|" << std::setw(10) << i + 1 << "|" << std::setw(10) << phonebook.getContact(i).getFirstName() << "|" << std::setw(10) << phonebook.getContact(i).getLastName() << "|" << std::setw(10) << phonebook.getContact(i).getNickName() << "|" << std::endl;
 	}
-	std::cout << " ___________________________________________" <<std::endl;
+	std::cout << " ___________________________________________" << std::endl;
 }
 
 void ExitCommand()
@@ -106,9 +111,9 @@ void ExitCommand()
 
 int main(void)
 {
-	PhoneBook	phonebook;
-	Contact		contact;
-	int			contact_index;
+	PhoneBook phonebook;
+	Contact contact;
+	int contact_index;
 
 	contact_index = 0;
 	while (1)
@@ -117,11 +122,11 @@ int main(void)
 		std::string command;
 		std::getline(std::cin, command);
 		if (std::cin.eof())
-			exit (0);
-		
+			exit(0);
+
 		if (command == "ADD")
 		{
-			AddCommand(contact, phonebook, contact_index);
+			AddCommand(contact, &phonebook, contact_index);
 			contact_index++;
 		}
 		if (command == "hi")
