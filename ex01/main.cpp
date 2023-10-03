@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/03 10:33:43 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/03 12:09:30 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int main(void)
 	Contact		contact;
 	int			contact_index;
 
-	contact_index = 0;
+	contact_index = 7;
 	while (1)
 	{
 		std::cout << "Enter the command: ";

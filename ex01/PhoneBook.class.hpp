@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 23:52:05 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/03 10:25:36 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/03 11:49:44 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class	PhoneBook
 {
 	private:
 
-		Contact	contacts_array[7];
+		Contact	contacts_array[8];
 
 	public:
 
