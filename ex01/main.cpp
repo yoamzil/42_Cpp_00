@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/03 13:53:45 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/03 15:11:03 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void SearchCommand(PhoneBook phonebook, Contact contact)
 	std::cout << " ___________________________________________" <<std::endl;
 	for(int i = 0; i <= 7; i++)
 	{
-		std::cout << "|" << i + 1 << "         "  << "|" << phonebook.getContact(i).getFirstName() << "|" << "          " << "|" << "          " << "|" << std::endl;
+		std::cout << "|" << i + 1 << "         "  << "|" << "          " << "|" << "          " << "|" << "          " << "|" << std::endl;
 	}
 	std::cout << " ___________________________________________" <<std::endl;
 }
