@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/02 15:54:53 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/03 10:33:43 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "PhoneBook.class.hpp"
 #include "Contact.class.hpp"
 
-void	AddCommand(Contact contact)
+void	AddCommand(Contact contact, PhoneBook phonebook, int i)
 {
 	std::string first;
 	std::string last;
@@ -62,7 +62,7 @@ void	AddCommand(Contact contact)
 		std::getline(std::cin, secret);
 	}
 	contact.ContactFilling(first, last, nick, phone, secret);
-	contact.ContactDisplaying();
+	phonebook.AddToPhoneBook(contact, i);
 }
 
 void SearchCommand()
@@ -77,7 +77,9 @@ int main(void)
 {
 	PhoneBook	phonebook;
 	Contact		contact;
+	int			contact_index;
 
+	contact_index = 0;
 	while (1)
 	{
 		std::cout << "Enter the command: ";
@@ -86,8 +88,8 @@ int main(void)
 
 		if (command == "ADD")
 		{
-			AddCommand(contact);
-			phonebook.AddToPhoneBook(contact);
+			AddCommand(contact, phonebook, contact_index);
+			contact_index++;
 		}
 		if (command == "SEARCH")
 			SearchCommand();

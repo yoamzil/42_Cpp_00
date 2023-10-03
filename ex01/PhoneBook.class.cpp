@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 20:13:53 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/02 22:11:07 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/03 10:32:23 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ PhoneBook::~PhoneBook(void)
     return;
 }
 
-void    PhoneBook::AddToPhoneBook(Contact contact)
+void    PhoneBook::AddToPhoneBook(Contact contact, int i)
 {
-    (void)contact;
-    std::cout << "AddToPhoneBook function called" << std::endl;
-    return;
+    if (i <= 7)
+        contacts_array[i] = contact;
+    std::cout << "----- Contact Added -----" << std::endl;
+    contacts_array[i].ContactDisplaying(); // Display the contact
+    std::cout << "--------------------------" << std::endl;
 }
