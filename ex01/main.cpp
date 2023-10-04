@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/04 13:30:10 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/04 13:51:11 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,8 +133,7 @@ void SearchCommand(PhoneBook phonebook, Contact contact)
 		if (std::cin.eof())
 			exit(0);
 	}
-	std::cout << "------->" << index[0] << std::endl;
-	while (index.size() != 1 || (index[0] < '1' || index[0] > '8'))
+	while (index.size() != 1 || index[0] < '1' || index[0] > '8')
 	{
 		// std::cout << "dkhel" << std::endl;
 		std::cout << "Not a valid number" << std::endl
@@ -146,16 +145,17 @@ void SearchCommand(PhoneBook phonebook, Contact contact)
 	if (index[0] >= '1' && index[0] <= '8')
 	{
 		index_casted = std::stoi(index);
-		if (index_casted >= 0 && index_casted <= 7)
-		std::cout << "l index howa ---->" << index_casted << std::endl;
-		phonebook.getContact(index_casted - 1).ContactDisplaying();
+		if (phonebook.getContact(index_casted - 1).getFirstName().empty())
+			std::cout << "No contact found!" << std::endl;
+		else
+			phonebook.getContact(index_casted - 1).ContactDisplaying();
 	}
 }
 
-int	ExitCommand(PhoneBook phonebook)
+int ExitCommand(PhoneBook phonebook)
 {
 	(void)phonebook;
-	exit (0);
+	exit(0);
 }
 
 int main(void)
