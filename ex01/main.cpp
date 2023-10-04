@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/04 13:51:11 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/04 14:11:52 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,6 @@ void SearchCommand(PhoneBook phonebook, Contact contact)
 	}
 	while (index.size() != 1 || index[0] < '1' || index[0] > '8')
 	{
-		// std::cout << "dkhel" << std::endl;
 		std::cout << "Not a valid number" << std::endl
 				  << "Enter contact index: ";
 		std::getline(std::cin, index);
@@ -152,10 +151,24 @@ void SearchCommand(PhoneBook phonebook, Contact contact)
 	}
 }
 
-int ExitCommand(PhoneBook phonebook)
+void ExitCommand(PhoneBook phonebook)
 {
 	(void)phonebook;
-	exit(0);
+	std::cout << "Are you sure you want to exit: ";
+	std::string command;
+	std::getline(std::cin, command);
+	if (std::cin.eof())
+		exit(0);
+	while (command != "yes" && command != "no")
+	{
+		std::cout << "it's a yes or no question genuis." << std::endl
+					<< "Are you sure you want to exit: ";
+		std::getline(std::cin, command);
+		if (std::cin.eof())
+			exit(0);
+	}
+	if (command == "yes")
+		exit(0);
 }
 
 int main(void)
