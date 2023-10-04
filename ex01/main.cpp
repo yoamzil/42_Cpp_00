@@ -6,7 +6,7 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/03 22:47:41 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/04 13:30:10 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,13 +133,29 @@ void SearchCommand(PhoneBook phonebook, Contact contact)
 		if (std::cin.eof())
 			exit(0);
 	}
-	index_casted = std::stoi(index);
-	std::cout << "l index howa ---->" << index_casted << std::endl;
-	phonebook.getContact(index_casted - 1).ContactDisplaying();
+	std::cout << "------->" << index[0] << std::endl;
+	while (index.size() != 1 || (index[0] < '1' || index[0] > '8'))
+	{
+		// std::cout << "dkhel" << std::endl;
+		std::cout << "Not a valid number" << std::endl
+				  << "Enter contact index: ";
+		std::getline(std::cin, index);
+		if (std::cin.eof())
+			exit(0);
+	}
+	if (index[0] >= '1' && index[0] <= '8')
+	{
+		index_casted = std::stoi(index);
+		if (index_casted >= 0 && index_casted <= 7)
+		std::cout << "l index howa ---->" << index_casted << std::endl;
+		phonebook.getContact(index_casted - 1).ContactDisplaying();
+	}
 }
 
-void ExitCommand()
+int	ExitCommand(PhoneBook phonebook)
 {
+	(void)phonebook;
+	exit (0);
 }
 
 int main(void)
@@ -162,13 +178,13 @@ int main(void)
 			AddCommand(contact, &phonebook, contact_index);
 			contact_index++;
 		}
-		if (command == "hi")
+		if (command == "SEARCH")
 			SearchCommand(phonebook, contact);
 		if (command == "EXIT")
-			exit(0);
+			ExitCommand(phonebook);
 		else
 		{
-			if (command.empty() || (command != "ADD" && command != "hi" && command != "EXIT"))
+			if (command.empty() || (command != "ADD" && command != "SEARCH" && command != "EXIT"))
 				std::cout << "Please enter a valid command. (ADD, SEARCH or EXIT)" << std::endl;
 		}
 	}
