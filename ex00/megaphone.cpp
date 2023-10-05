@@ -6,28 +6,28 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:37:20 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/09/29 19:26:19 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/05 19:24:04 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-void	StringCap(std::string str)
+void	StringCap(std::string *str)
 {
-	for (char c : str)
+	for (int c = 0; (*str)[c]; c++)
 	{
-		if (std::islower(c))
-			c = std::toupper(c);
+		if (std::islower((*str)[c]))
+			(*str)[c] = std::toupper((*str)[c]);
 	}
 }
 
 void	StartingProgram(std::string str)
 {
-	StringCap(str);
-	for (char c : str)
+	StringCap(&str);
+	for (int c = 0; str[c]; c++)
 	{
 		if (c != '"')
-			std::cout << c;
+			std::cout << str[c];
 	}
 }
 

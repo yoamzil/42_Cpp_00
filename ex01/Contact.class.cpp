@@ -6,25 +6,13 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 20:13:46 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/03 15:48:09 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/05 18:29:38 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.class.hpp"
 
-Contact::Contact(void)
-{
-    // std::cout << "Contact constructor called" << std::endl;
-    return;
-}
-
-Contact::~Contact(void)
-{
-    // std::cout << "Contact destructor called" << std::endl;
-    return;
-}
-
-void Contact::ContactFilling(std::string first, std::string last, std::string nick, std::string phone, std::string secret)
+void    Contact::ContactFilling(std::string first, std::string last, std::string nick, std::string phone, std::string secret)
 {
     first_name = first;
     last_name = last;
@@ -42,17 +30,17 @@ void    Contact::ContactDisplaying()
     std::cout << "Darkest secret: " << darkest_secret << std::endl;
 }
 
-std::string Contact::getFirstName()
+std::string     Contact::getFirstName()
 {
     return (first_name);
 }
 
-std::string Contact::getLastName()
+std::string     Contact::getLastName()
 {
     return (last_name);
 }
 
-std::string Contact::getNickName()
+std::string     Contact::getNickName()
 {
     return (nick_name);
 }
