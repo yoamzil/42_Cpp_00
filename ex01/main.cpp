@@ -6,13 +6,35 @@
 /*   By: yoamzil <yoamzil@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:04:19 by yoamzil           #+#    #+#             */
-/*   Updated: 2023/10/04 14:11:52 by yoamzil          ###   ########.fr       */
+/*   Updated: 2023/10/05 10:49:30 by yoamzil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "PhoneBook.class.hpp"
 #include "Contact.class.hpp"
+
+int	checkWhiteSpaces(std::string s)
+{
+	int	i;
+
+	i = 0;
+	if (s[i] == ' ' || s[i] == '\t' )
+		return (1);
+	while (s[i])
+	{
+		if (s[i] == ' ' || s[i] == '\t')
+		{
+			if (s[i + 1] == ' ' || s[i + 1] == '\t')
+				return (1);
+		}
+		i++;
+	}
+	if (s[i - 1] == ' ' || s[i - 1] == '\t' )
+		return (1);
+	return (0);
+	
+}
 
 void AddCommand(Contact contact, PhoneBook *phonebook, int i)
 {
@@ -26,9 +48,9 @@ void AddCommand(Contact contact, PhoneBook *phonebook, int i)
 	std::getline(std::cin, first);
 	if (std::cin.eof())
 		exit(0);
-	while (first.empty())
+	while (first.empty() || checkWhiteSpaces(first))
 	{
-		std::cout << "No input detected." << std::endl
+		std::cout << "Try again!!!" << std::endl
 				  << "Enter first name: ";
 		std::getline(std::cin, first);
 		if (std::cin.eof())
@@ -39,9 +61,9 @@ void AddCommand(Contact contact, PhoneBook *phonebook, int i)
 	std::getline(std::cin, last);
 	if (std::cin.eof())
 		exit(0);
-	while (last.empty())
+	while (last.empty() || checkWhiteSpaces(last))
 	{
-		std::cout << "No input detected." << std::endl
+		std::cout << "Try again!!!" << std::endl
 				  << "Enter last name: ";
 		std::getline(std::cin, last);
 		if (std::cin.eof())
@@ -52,9 +74,9 @@ void AddCommand(Contact contact, PhoneBook *phonebook, int i)
 	std::getline(std::cin, nick);
 	if (std::cin.eof())
 		exit(0);
-	while (nick.empty())
+	while (nick.empty() || checkWhiteSpaces(nick))
 	{
-		std::cout << "No input detected." << std::endl
+		std::cout << "Try again!!!" << std::endl
 				  << "Enter nickname: ";
 		std::getline(std::cin, nick);
 		if (std::cin.eof())
@@ -65,9 +87,9 @@ void AddCommand(Contact contact, PhoneBook *phonebook, int i)
 	std::getline(std::cin, phone);
 	if (std::cin.eof())
 		exit(0);
-	while (phone.empty())
+	while (phone.empty() || checkWhiteSpaces(phone))
 	{
-		std::cout << "No input detected." << std::endl
+		std::cout << "Try again!!!" << std::endl
 				  << "Enter phone number: ";
 		std::getline(std::cin, phone);
 		if (std::cin.eof())
@@ -78,9 +100,9 @@ void AddCommand(Contact contact, PhoneBook *phonebook, int i)
 	std::getline(std::cin, secret);
 	if (std::cin.eof())
 		exit(0);
-	while (secret.empty())
+	while (secret.empty() || checkWhiteSpaces(secret))
 	{
-		std::cout << "No input detected." << std::endl
+		std::cout << "Try again!!!" << std::endl
 				  << "Tell me your darkest secret... NOWWW!: ";
 		std::getline(std::cin, secret);
 		if (std::cin.eof())
