@@ -1,5 +1,5 @@
 CC = c++
-CFLAGS = #-Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 NAME = megaphone
 SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
