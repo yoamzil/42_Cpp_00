@@ -44,8 +44,6 @@ int	main(int ac, char **av)
 		i = 1;
 		while (i <= ac - 1)
 		{
-			if (i > 1)
-				std::cout << " ";
 			startingProgram(av[i]);
 			i++;
 		}

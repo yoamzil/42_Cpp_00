@@ -1,11 +1,8 @@
-CC = c++
-CFLAGS = -Wall -Werror -Wextra
-NAME = megaphone
-SRCS = megaphone.cpp
-OBJS = $(SRCS:.cpp=.o)
-
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $^
+CC			=	c++
+CXXFLAGS	=	-Wall -Werror -Wextra
+NAME		=	megaphone
+SRCS		=	megaphone.cpp
+OBJS		=	$(SRCS:.cpp=.o)
 
 all: $(NAME)
 
