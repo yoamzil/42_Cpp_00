@@ -14,37 +14,27 @@
 /*																						  */
 /* ************************************************************************************** */
 
-#include "Contact.class.hpp"
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-void    Contact::ContactFilling(std::string first, std::string last, std::string nick, std::string phone, std::string secret)
-{
-    first_name = first;
-    last_name = last;
-    nick_name = nick;
-    phone_number = phone;
-    darkest_secret = secret;
-}
+#include "Contact.hpp"
+#include <iostream>
+#include <iomanip>
+#include <string>
 
-void    Contact::ContactDisplaying()
+class	PhoneBook
 {
-    std::cout << "First name: " << first_name << std::endl;
-    std::cout << "Last name: " << last_name << std::endl;
-    std::cout << "Nickname: " << nick_name << std::endl;
-    std::cout << "Phone number: " << phone_number << std::endl;
-    std::cout << "Darkest secret: " << darkest_secret << std::endl;
-}
+	public:
+		void	AddToPhoneBook(Contact contact, int i);
+		void	AddCommand(Contact contact, PhoneBook *phonebook, int i);
+		void	SearchCommand(PhoneBook phonebook);
+		void	ExitCommand();
+		int		checkWhiteSpaces(std::string s);
 
-std::string     Contact::getFirstName()
-{
-    return (first_name);
-}
+		Contact getContact(int i);
 
-std::string     Contact::getLastName()
-{
-    return (last_name);
-}
+	private:
+		Contact contacts_array[8];
+};
 
-std::string     Contact::getNickName()
-{
-    return (nick_name);
-}
+#endif
